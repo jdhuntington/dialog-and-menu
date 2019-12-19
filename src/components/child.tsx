@@ -5,7 +5,9 @@ import {
   IContextualMenuItem
 } from "office-ui-fabric-react";
 
-export const ChildContents: React.FunctionComponent<{}> = props => {
+export const ChildContents: React.FunctionComponent<{
+  layer: boolean;
+}> = props => {
   const linkRef = React.useRef(null);
   const [showContextualMenu, setShowContextualMenu] = React.useState(false);
   const onShowContextualMenu = React.useCallback(
@@ -30,6 +32,7 @@ export const ChildContents: React.FunctionComponent<{}> = props => {
         </b>
       </p>
       <ContextualMenu
+        doNotLayer={!props.layer}
         items={menuItems}
         hidden={!showContextualMenu}
         target={linkRef}

@@ -1,5 +1,6 @@
+import { Dialog, PrimaryButton } from "office-ui-fabric-react";
 import * as React from "react";
-import { PrimaryButton, Dialog } from "office-ui-fabric-react";
+
 import { ChildContents } from "./child";
 
 export const FabricDialog: React.FunctionComponent<{}> = props => {
@@ -12,7 +13,7 @@ export const FabricDialog: React.FunctionComponent<{}> = props => {
   }, [setDialogOpen]);
   const dialog = isDialogOpen ? (
     <Dialog isOpen={true} onDismiss={dismissDialog}>
-      <ChildContents />
+      <ChildContents layer={true} />
     </Dialog>
   ) : null;
 
